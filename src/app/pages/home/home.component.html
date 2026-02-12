@@ -1,0 +1,38 @@
+<div class="hero">
+
+  <!-- BACKGROUND SLIDES -->
+  <div class="bg-slider">
+    <div
+      *ngFor="let slide of slides; let i = index"
+      class="bg-slide"
+      [class.active]="i === currentIndex"
+      [style.backgroundImage]="'url(' + slide.image + ')'"
+    ></div>
+  </div>
+
+  <!-- OVERLAY -->
+  <div class="overlay"></div>
+
+  <!-- CONTENT -->
+  <div class="hero-content">
+  <h1>Hi, I'm <span>Jnana Teja</span></h1>
+
+  <h2 class="role">
+    {{ slides[currentIndex].role }}
+  </h2>
+
+  <p class="description">
+    {{ slides[currentIndex].description }}
+  </p>
+
+  <div class="buttons">
+    <button class="primary" (click)="scrollTo('projects')">
+      View Projects
+    </button>
+    <button class="secondary" (click)="scrollTo('contact')">
+      Contact Me
+    </button>
+  </div>
+  </div>
+
+</div>

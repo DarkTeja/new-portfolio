@@ -1,0 +1,113 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 40px;
+  background: linear-gradient(90deg, #0b0b0b, #1f1f1f);
+  color: white;
+
+  z-index: 1000;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+}
+
+
+
+nav button {
+  background: none;
+  border: none;
+  color: white;
+  margin-left: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+nav button:hover {
+  color: #00d8ff;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Desktop nav actions */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Buttons */
+.primary-btn {
+  background: linear-gradient(90deg, #00d8ff, #6f00ff);
+  color: black;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 216, 255, 0.4);
+}
+
+.outline-btn {
+  background: transparent;
+  border: 1px solid #00d8ff;
+  color: #00d8ff;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.outline-btn:hover {
+  background: #00d8ff;
+  color: black;
+}
+@media (max-width: 768px) {
+
+  .nav-actions {
+    display: none;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #0b0b0b;
+    flex-direction: column;
+    align-items: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .nav-links.open {
+    max-height: 300px;
+  }
+}
+
+/* HAMBURGER */
+.menu-icon {
+  display: none;        /* ❌ hidden on desktop */
+  font-size: 26px;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;     /* ✅ visible on mobile */
+  }
+}

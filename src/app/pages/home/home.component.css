@@ -1,0 +1,247 @@
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 0 40px;
+  gap: 40px;
+}
+
+/* TEXT */
+.home-text {
+  max-width: 600px;
+}
+
+.home-text h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.home-text h1 span {
+  color: #00d8ff;
+}
+
+/* ROLE TEXT */
+.role {
+  font-size: 32px;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow:
+    0 0 8px rgba(0, 216, 255, 0.8),
+    0 0 16px rgba(0, 216, 255, 0.6);
+  margin-bottom: 20px;
+}
+
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* BUTTONS */
+.buttons button {
+  padding: 12px 24px;
+  margin-right: 15px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.primary {
+  background-color: #00d8ff;
+  border: none;
+  color: black;
+}
+
+.secondary {
+  background: transparent;
+  border: 2px solid #00d8ff;
+  color: #00d8ff;
+}
+
+/* SLIDER */
+.slider {
+  position: relative;
+  width: 320px;
+  height: 320px;
+}
+
+.slider img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slider img.active {
+  opacity: 1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .slider {
+    width: 240px;
+    height: 240px;
+    margin-top: 30px;
+  }
+}
+
+/* HERO WRAPPER */
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  color: white;
+}
+
+/* BACKGROUND SLIDER */
+.bg-slider {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.bg-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.bg-slide.active {
+  opacity: 1;
+}
+
+/* DARK OVERLAY */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 2;
+}
+
+/* CONTENT */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* TEXT */
+.hero-content h1 {
+  font-size: 56px;
+  margin-bottom: 10px;
+}
+
+.hero-content h1 span {
+  color: #00d8ff;
+}
+
+/* ROLE */
+.role {
+  font-size: 32px;
+  margin-bottom: 20px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* PARAGRAPH */
+.hero-content p {
+  font-size: 18px;
+  max-width: 600px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* BUTTONS */
+.buttons button {
+  padding: 12px 26px;
+  margin-right: 15px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.primary {
+  background-color: #00d8ff;
+  border: none;
+  color: black;
+}
+
+.secondary {
+  background: transparent;
+  border: 2px solid #00d8ff;
+  color: #00d8ff;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 40px;
+  }
+
+  .role {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .buttons {
+    flex-direction: column;
+    align-items: flex-start; /* or center if you want */
+    gap: 16px;
+  }
+
+  .buttons button {
+    width: fit-content; /* or 100% if you want full width */
+  }
+}
+.buttons {
+  display: flex;
+  gap: 15px; /* modern spacing */
+}
+
+
+

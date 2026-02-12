@@ -1,0 +1,141 @@
+.about-section {
+  padding: 120px 40px;
+  background: linear-gradient(180deg, #000000, #111111);
+  color: #e6e6e6;
+}
+
+.about-wrapper {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+/* PHOTO */
+.about-photo {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/* Glow ring */
+.about-photo::before {
+  content: '';
+  position: absolute;
+  width: 290px;
+  height: 290px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00d8ff, #6f00ff);
+  filter: blur(18px);
+  opacity: 0.25;
+  z-index: 0;
+}
+
+.about-photo img {
+  animation: floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Image */
+.about-photo img {
+  position: relative;
+  z-index: 1;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: contain;
+  border: 3px solid #1f1f1f;
+  box-shadow: 0 0 35px rgba(0, 216, 255, 0.25);
+}
+
+
+/* TEXT */
+.about-content h2 {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #00d8ff;
+}
+
+.about-content p {
+  font-size: 17px;
+  line-height: 1.9;
+  color: #cfcfcf;
+  margin-bottom: 18px;
+}
+
+/* STEP-BY-STEP STAGGER */
+.stagger > * {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: staggerFade 0.7s ease forwards;
+}
+
+.stagger > *:nth-child(1) { animation-delay: 0.2s; }
+.stagger > *:nth-child(2) { animation-delay: 0.4s; }
+.stagger > *:nth-child(3) { animation-delay: 0.6s; }
+.stagger > *:nth-child(4) { animation-delay: 0.8s; }
+.stagger > *:nth-child(5) { animation-delay: 1s; }
+
+@keyframes staggerFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* SKILLS */
+.skills-grid {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.skills-grid h4 {
+  font-size: 15px;
+  color: #00d8ff;
+}
+
+.skills-grid span {
+  font-size: 14px;
+  color: #bdbdbd;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .about-wrapper {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

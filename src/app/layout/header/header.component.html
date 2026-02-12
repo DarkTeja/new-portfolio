@@ -1,0 +1,27 @@
+<header>
+  <div class="logo">MyPortfolio</div>
+
+  <!-- Desktop Navigation -->
+  <nav class="nav-links" [class.open]="menuOpen">
+    <button (click)="scrollTo('home'); closeMenu()"><b>Home</b></button>
+    <button (click)="scrollTo('about'); closeMenu()"><b>About</b></button>
+    <button (click)="scrollTo('skills'); closeMenu()"><b>Skills</b></button>
+    <button (click)="scrollTo('projects'); closeMenu()"><b>Projects</b></button>
+    <button (click)="scrollTo('contact'); closeMenu()"><b>Contact</b></button>
+  </nav>
+
+  <!-- Desktop Action Buttons -->
+  <div class="nav-actions">
+    <button class="outline-btn" (click)="scrollTo('contact')">
+      Hire Me
+    </button>
+    <a class="primary-btn" href="assets/jnana_teja_resum.pdf" target="_blank">
+      Resume
+    </a>
+  </div>
+
+  <!-- Hamburger -->
+  <div class="menu-icon" (click)="toggleMenu()">
+    ☰
+  </div>
+</header>

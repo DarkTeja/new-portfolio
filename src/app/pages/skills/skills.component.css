@@ -1,0 +1,94 @@
+.skills-section {
+  padding: 120px 40px;
+  background: #000;
+}
+
+.skills-wrapper {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.skills-title {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 70px;
+  color: #00d8ff;
+}
+
+/* ROW BASE */
+.skills-row {
+  display: grid;
+  justify-content: center;
+  gap: 28px;
+  margin-bottom: 40px;
+}
+
+/* PYRAMID ROWS */
+.row-5 {
+  grid-template-columns: repeat(5, 140px);
+}
+
+.row-4 {
+  grid-template-columns: repeat(4, 140px);
+}
+
+.row-3 {
+  grid-template-columns: repeat(3, 140px);
+}
+
+/* CARD */
+.skill-card {
+  height: 140px;
+  background: radial-gradient(
+    circle at top,
+    rgba(0, 216, 255, 0.15),
+    rgba(0, 0, 0, 0.95)
+  );
+  border-radius: 18px;
+  border: 1px solid #13232f;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ICON */
+.skill-card img {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 14px;
+  filter: drop-shadow(0 0 10px rgba(0, 216, 255, 0.55));
+}
+
+/* LABEL */
+.skill-card span {
+  font-size: 14px;
+  color: #ffffff;
+  background: #0a2a44;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* HOVER */
+.skill-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 45px rgba(0, 216, 255, 0.35);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .row-5 { grid-template-columns: repeat(3, 140px); }
+  .row-4 { grid-template-columns: repeat(2, 140px); }
+  .row-3 { grid-template-columns: repeat(2, 140px); }
+}
+
+@media (max-width: 500px) {
+  .row-5,
+  .row-4,
+  .row-3 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
