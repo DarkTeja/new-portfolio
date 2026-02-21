@@ -6,6 +6,7 @@
 
 body {
   font-family: 'Inter', sans-serif;
+  zoom: 0.85;
 }
 
 main section {
@@ -21,8 +22,7 @@ main section {
 main {
   margin-top: 70px;
 }
+
 html {
   scroll-behavior: smooth;
 }
-
-
