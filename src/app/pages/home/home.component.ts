@@ -8,22 +8,22 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 export class HomeComponent implements OnInit, OnDestroy {
 
   slides = [
-  {
-    image: 'assets/slide1.jpg',
-    role: 'Full Stack Developer',
-    description: 'I design and build complete web applications, handling both frontend and backend with scalable architectures.'
-  },
-  {
-    image: 'assets/slide2.png',
-    role: 'Frontend Developer',
-    description: 'I create responsive, user-friendly interfaces with modern Angular, focusing on performance and UX.'
-  },
-  {
-    image: 'assets/slide3.png',
-    role: 'Backend Developer',
-    description: 'I develop secure, high-performance backend services, APIs, and databases to power applications.'
-  }
-];
+    {
+      image: 'assets/slide1.jpg',
+      role: 'Full Stack Developer',
+      description: 'I design and build complete web applications, handling both frontend and backend with scalable architectures.'
+    },
+    {
+      image: 'assets/slide2.png',
+      role: 'Frontend Developer',
+      description: 'I create responsive, user-friendly interfaces with modern Angular, focusing on performance and UX.'
+    },
+    {
+      image: 'assets/slide3.png',
+      role: 'Backend Developer',
+      description: 'I develop secure, high-performance backend services, APIs, and databases to power applications.'
+    }
+  ];
 
 
   currentIndex = 0;
@@ -44,9 +44,4 @@ export class HomeComponent implements OnInit, OnDestroy {
     clearInterval(this.intervalId);
   }
 
-  scrollTo(sectionId: string): void {
-    document.getElementById(sectionId)?.scrollIntoView({
-      behavior: 'smooth'
-    });
-  }
 }

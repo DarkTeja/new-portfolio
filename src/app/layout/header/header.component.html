@@ -3,16 +3,17 @@
 
   <!-- Desktop Navigation -->
   <nav class="nav-links" [class.open]="menuOpen">
-    <button (click)="scrollTo('home'); closeMenu()"><b>Home</b></button>
-    <button (click)="scrollTo('about'); closeMenu()"><b>About</b></button>
-    <button (click)="scrollTo('skills'); closeMenu()"><b>Skills</b></button>
-    <button (click)="scrollTo('projects'); closeMenu()"><b>Projects</b></button>
-    <button (click)="scrollTo('contact'); closeMenu()"><b>Contact</b></button>
+    <a routerLink="/home" routerLinkActive="active-link" (click)="closeMenu()"><b>Home</b></a>
+    <a routerLink="/about" routerLinkActive="active-link" (click)="closeMenu()"><b>About</b></a>
+    <a routerLink="/skills" routerLinkActive="active-link" (click)="closeMenu()"><b>Skills</b></a>
+    <a routerLink="/projects" routerLinkActive="active-link" (click)="closeMenu()"><b>Projects</b></a>
+    <a routerLink="/contact" routerLinkActive="active-link" (click)="closeMenu()"><b>Contact</b></a>
+    <a routerLink="/contact" class="mobile-action-btn" (click)="closeMenu()">Hire Me</a>
   </nav>
 
   <!-- Desktop Action Buttons -->
   <div class="nav-actions">
-    <button class="outline-btn" (click)="scrollTo('contact')">
+    <button class="outline-btn" routerLink="/contact">
       Hire Me
     </button>
     <a class="primary-btn" href="assets/jnana_teja_resum.pdf" target="_blank">

@@ -6,24 +6,37 @@
     <div class="projects-grid stagger reveal">
       <div class="project-card" *ngFor="let project of projects">
 
+        <div class="project-badges">
+          <span class="badge client-badge" *ngIf="project.isClientProject">Client Project</span>
+          <span class="badge public-badge" *ngIf="!project.isClientProject && project.isPublicProject">Public
+            Project</span>
+          <span class="badge status-badge" [class]="(project.projectStatus?.toLowerCase() || '').replace(' ', '-')">
+            <span class="status-dot"></span>
+            {{ project.projectStatus }}
+          </span>
+        </div>
+
         <div class="project-image">
           <img [src]="project.image" [alt]="project.title" />
         </div>
 
         <div class="project-content">
+          <div class="client-name" *ngIf="project.clientName">
+            <i class="fas fa-building"></i> {{ project.clientName }}
+          </div>
           <h3>{{ project.title }}</h3>
           <p>{{ project.description }}</p>
 
-          <div class="tech-stack">
+          <div class="tech-stack" *ngIf="!project.isClientProject">
             <span *ngFor="let tech of project.tech">{{ tech }}</span>
           </div>
 
           <div class="project-links">
-            <a *ngIf="project.github" [href]="project.github" target="_blank">
-              GitHub
+            <a *ngIf="project.github" [href]="project.github" target="_blank" class="link-btn github">
+              <i class="fab fa-github"></i> Source
             </a>
-            <a *ngIf="project.demo" [href]="project.demo" target="_blank">
-              Live Demo
+            <a *ngIf="project.demo" [href]="project.demo" target="_blank" class="link-btn demo">
+              <i class="fas fa-external-link-alt"></i> Live Demo
             </a>
           </div>
         </div>

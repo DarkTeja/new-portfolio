@@ -8,29 +8,38 @@
 
     <!-- CONTENT -->
     <div class="about-content stagger reveal">
-  <h2>About Me</h2>
+      <div class="intro-badge">About Me</div>
+      <h2>Engineered for <span>Innovation</span> & Precision</h2>
 
-  <p>
-    I am a <strong>Full Stack Developer</strong> with hands-on experience
-    in building scalable and high-performance web applications using
-    <strong>Angular, Node.js, and MySQL</strong>.
-  </p>
+      <p class="main-para">
+        I am a <strong>Full Stack Developer</strong> at <strong>Sri Heramba Innovations Pvt Ltd</strong>, where I
+        transform complex requirements into elegant, scalable digital solutions. With a deep focus on <strong>Angular,
+          Node.js, and MySQL</strong>, I build applications that are as performant as they are beautiful.
+      </p>
 
-  <p>
-    I specialize in designing, developing, and integrating
-    <strong>RESTful APIs</strong> to ensure efficient data flow,
-    modular architecture, and maintainable backend systems.
-  </p>
+      <div class="stats-grid">
+        <div class="stat-card" *ngFor="let stat of stats">
+          <div class="stat-icon"><i [class]="stat.icon"></i></div>
+          <div class="stat-info">
+            <span class="stat-value">{{ stat.value }}</span>
+            <span class="stat-label">{{ stat.label }}</span>
+          </div>
+        </div>
+      </div>
 
-  <p>
-    Currently, I work at <strong>Sri Heramba Innovations Pvt Ltd</strong>
-    (May 2025 – Present), where I contribute to end-to-end development of
-    enterprise-grade applications with a strong focus on performance,
-    scalability, and clean code practices.
-  </p>
-
- 
-</div>
+      <div class="expertise-section">
+        <h3>Core Expertise</h3>
+        <div class="expertise-grid">
+          <div class="expertise-item" *ngFor="let item of expertises">
+            <div class="expertise-icon"><i [class]="item.icon"></i></div>
+            <div class="expertise-text">
+              <h4>{{ item.title }}</h4>
+              <p>{{ item.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </div>
 </section>
