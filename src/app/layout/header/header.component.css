@@ -42,8 +42,45 @@ nav button:hover {
 }
 
 .logo {
-  font-size: 20px;
-  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.header-logo {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(0, 216, 255, 0.3);
+  box-shadow: 0 0 10px rgba(0, 216, 255, 0.2);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  backface-visibility: hidden;
+}
+
+.header-logo.flipped {
+  transform: rotateY(180deg);
+}
+
+.logo-text {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.5px;
+  color: #fff !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.logo .highlight {
+  color: #00d8ff;
+  font-style: italic;
+  margin: 0 1px;
+  text-shadow: 0 0 15px rgba(0, 216, 255, 0.6);
+  background: linear-gradient(135deg, #00d8ff, #6f00ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
 }
 
 /* Desktop nav actions */

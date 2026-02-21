@@ -8,9 +8,14 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
 
   menuOpen = false;
+  logoFlipped = false;
 
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
+  }
+
+  toggleLogoFlip() {
+    this.logoFlipped = !this.logoFlipped;
   }
 
   closeMenu() {
