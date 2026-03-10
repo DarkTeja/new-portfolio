@@ -88,7 +88,51 @@ export class ProjectsComponent implements AfterViewInit {
       isClientProject: true,
       clientName: 'Enterprise Client',
       projectStatus: 'Live'
+    },
+    {
+      title: 'Ecommerce Demo',
+      description: 'A modern, high-performance E-commerce platform demonstration. Features a premium design, responsive layout, and seamless user experience tailored for high-end retail.',
+      canFlip: true,
+      features: [
+        'Modern UI/UX Design',
+        'Responsive Product Grid',
+        'Interactive Figma Prototype',
+        'Optimized User Flows'
+      ],
+      image: 'assets/ecommerce_preview.png',
+      tech: ['Figma', 'UI/UX', 'Prototype'],
+      github: '',
+      demo: 'https://time-lens-09201289.figma.site/',
+      isClientProject: false,
+      isPublicProject: true,
+      projectStatus: 'Demo'
+    },
+    {
+      title: 'Restaurant Demo',
+      description: 'A luxurious and inviting restaurant website demonstration. Showcases gourmet cuisine with a premium reservation system and an elegant, responsive layout.',
+      canFlip: true,
+      features: [
+        'Luxury Food Showcase',
+        'Reservation System UI',
+        'Elegant Serif Typography',
+        'Responsive Dining Experience'
+      ],
+      image: 'assets/restaurant_preview.png',
+      tech: ['Figma', 'UI/UX', 'Prototype'],
+      github: '',
+      demo: 'https://www.figma.com/make/uLr5hGSmcZNWrxhoK2TMeO/Restaurant-Website?fullscreen=1&t=B6fggFMUw5dLUiWI-1&code-node-id=0-8',
+      isClientProject: false,
+      isPublicProject: true,
+      projectStatus: 'Demo'
     }
   ];
+
+  get regularProjects() {
+    return this.projects.filter(p => p.projectStatus !== 'Demo');
+  }
+
+  get demoProjects() {
+    return this.projects.filter(p => p.projectStatus === 'Demo');
+  }
 
 }

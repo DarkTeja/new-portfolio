@@ -2,12 +2,9 @@
   <div class="projects-wrapper">
 
     <h2 class="section-title reveal">Projects</h2>
-
     <div class="projects-grid stagger reveal">
-      <div class="project-card" *ngFor="let project of projects" [class.can-flip]="project.canFlip">
+      <div class="project-card" *ngFor="let project of regularProjects" [class.can-flip]="project.canFlip">
         <div class="project-card-inner">
-
-          <!-- FRONT FACE -->
           <div class="project-card-front">
             <div class="project-badges">
               <span class="badge client-badge" *ngIf="project.isClientProject">Client Project</span>
@@ -18,23 +15,17 @@
                 {{ project.projectStatus }}
               </span>
             </div>
-
             <div class="project-image">
               <img [src]="project.image" [alt]="project.title" />
             </div>
-
             <div class="project-info-front" [class.static-layout]="!project.canFlip">
               <h3>{{ project.title }}</h3>
-
-              <!-- If Flipping: show minor details + hint -->
               <ng-container *ngIf="project.canFlip">
                 <div class="tech-stack mini" *ngIf="project.tech">
                   <span *ngFor="let tech of project.tech | slice:0:3">{{ tech }}</span>
                 </div>
                 <div class="hover-hint">Explore Details <i class="fas fa-sync-alt"></i></div>
               </ng-container>
-
-              <!-- If Static: show full description + links (Portfolio) -->
               <ng-container *ngIf="!project.canFlip">
                 <p class="static-desc">{{ project.description }}</p>
                 <div class="tech-stack" *ngIf="project.tech">
@@ -51,13 +42,10 @@
               </ng-container>
             </div>
           </div>
-
-          <!-- BACK FACE (Only for canFlip) -->
           <div class="project-card-back" *ngIf="project.canFlip">
             <div class="back-content">
               <h3>{{ project.title }}</h3>
               <p class="project-desc">{{ project.description }}</p>
-
               <div class="features-list" *ngIf="project.features">
                 <h4>Core Aspects:</h4>
                 <ul>
@@ -66,7 +54,6 @@
                   </li>
                 </ul>
               </div>
-
               <div class="project-links">
                 <a *ngIf="project.github" [href]="project.github" target="_blank" class="link-btn github">
                   <i class="fab fa-github"></i> Source
@@ -77,7 +64,74 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- Demos Section -->
+    <h2 class="section-title reveal demo-heading">Demos</h2>
+    <div class="projects-grid stagger reveal">
+      <div class="project-card" *ngFor="let project of demoProjects" [class.can-flip]="project.canFlip">
+        <div class="project-card-inner">
+          <div class="project-card-front">
+            <div class="project-badges">
+              <span class="badge client-badge" *ngIf="project.isClientProject">Client Project</span>
+              <span class="badge public-badge" *ngIf="!project.isClientProject && project.isPublicProject">Public
+                Project</span>
+              <span class="badge status-badge" [class]="(project.projectStatus?.toLowerCase() || '').replace(' ', '-')">
+                <span class="status-dot"></span>
+                {{ project.projectStatus }}
+              </span>
+            </div>
+            <div class="project-image">
+              <img [src]="project.image" [alt]="project.title" />
+            </div>
+            <div class="project-info-front" [class.static-layout]="!project.canFlip">
+              <h3>{{ project.title }}</h3>
+              <ng-container *ngIf="project.canFlip">
+                <div class="tech-stack mini" *ngIf="project.tech">
+                  <span *ngFor="let tech of project.tech | slice:0:3">{{ tech }}</span>
+                </div>
+                <div class="hover-hint">Explore Details <i class="fas fa-sync-alt"></i></div>
+              </ng-container>
+              <ng-container *ngIf="!project.canFlip">
+                <p class="static-desc">{{ project.description }}</p>
+                <div class="tech-stack" *ngIf="project.tech">
+                  <span *ngFor="let tech of project.tech">{{ tech }}</span>
+                </div>
+                <div class="project-links static-links">
+                  <a *ngIf="project.github" [href]="project.github" target="_blank" class="link-btn github">
+                    <i class="fab fa-github"></i> Source
+                  </a>
+                  <a *ngIf="project.demo" [href]="project.demo" target="_blank" class="link-btn demo">
+                    <i class="fas fa-external-link-alt"></i> Live Demo
+                  </a>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <div class="project-card-back" *ngIf="project.canFlip">
+            <div class="back-content">
+              <h3>{{ project.title }}</h3>
+              <p class="project-desc">{{ project.description }}</p>
+              <div class="features-list" *ngIf="project.features">
+                <h4>Core Aspects:</h4>
+                <ul>
+                  <li *ngFor="let feature of project.features">
+                    <i class="fas fa-check-circle"></i> {{ feature }}
+                  </li>
+                </ul>
+              </div>
+              <div class="project-links">
+                <a *ngIf="project.github" [href]="project.github" target="_blank" class="link-btn github">
+                  <i class="fab fa-github"></i> Source
+                </a>
+                <a *ngIf="project.demo" [href]="project.demo" target="_blank" class="link-btn demo">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

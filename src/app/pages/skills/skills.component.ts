@@ -34,7 +34,8 @@ export class SkillsComponent {
       title: 'Tools & Version Control',
       skills: [
         { name: 'Git', icon: 'assets/icons/git.svg', featured: false },
-        { name: 'Postman', icon: 'assets/icons/postman.svg', featured: false }
+        { name: 'Postman', icon: 'assets/icons/postman.svg', featured: false },
+        { name: 'Figma', icon: 'assets/icons/figma.jpg', featured: true }
       ]
     }
   ];
